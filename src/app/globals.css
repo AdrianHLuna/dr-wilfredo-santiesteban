@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/*
+ * Dr. Wilfredo Marcial Santiesteban Herrera — Cirugía General, Tuxtla
+ * Gutiérrez. Dirección de diseño: "Minimalista de Lujo" — deliberadamente
+ * distinta a los 4 sitios reales ya registrados (bento oscuro de
+ * dr-raul-vega, split oscuro de dr-raul-mu-oz-gomez, diagonal oscuro de
+ * dr-aram-alarcon, índice editorial de dr-gustavo-alvarez): Hero CENTRADO
+ * y simétrico (no asimétrico/split), grid de tarjetas con borde dorado fino
+ * (no índice numerado, no bento), animación de "revelado" al hacer scroll
+ * (opacidad+escala, no hover-underline ni clip-path), paleta clara
+ * extraída directamente del logo real (negro + dorado/champán) — el único
+ * sitio además de Gustavo con fondo claro dominante, pero con composición,
+ * ritmo de tarjeta y mecánica de animación completamente distintos.
+ */
+:root {
+  --color-ink: #212224; /* negro oficial del logo — texto principal */
+  --color-ink-soft: #4a4a4a;
+  --color-gold: #bca488; /* dorado/champán oficial del logo — único acento vivo */
+  --color-gold-light: #e4d8c8;
+  --color-gold-pale: #f4efe8;
+  --color-cream: #faf8f5; /* fondo general, cálido, no blanco puro */
+  --color-line: #e5ddd1; /* líneas/bordes finos dorados-neutros */
+  --color-slate: #6b6b6b;
+
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+
+  /* Animación lenta y elegante, pero disparada por scroll (no hover) —
+     "revelado" en vez del subrayado-en-hover de Gustavo o el barrido
+     mecánico de Aram. */
+  --ease-luxe: cubic-bezier(0.19, 1, 0.22, 1);
+  --duration-luxe: 0.9s;
+
+  --shadow-soft: 0 20px 45px -20px rgba(33, 34, 36, 0.12);
+  --shadow-gold: 0 16px 35px -14px rgba(188, 164, 136, 0.45);
+}
+
+@theme inline {
+  --color-primary: var(--color-ink);
+  --color-primary-foreground: var(--color-cream);
+  --color-accent: var(--color-gold);
+  --color-accent-foreground: var(--color-ink);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--color-gold-pale);
+  --color-muted-foreground: var(--color-slate);
+  --color-border: var(--color-line);
+  --font-sans: var(--font-jost);
+  --font-heading: var(--font-cormorant);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jost), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-cormorant), Georgia, serif;
+  letter-spacing: 0.01em;
+}
+
+/* Eyebrow editorial de este sitio — versalitas con tracking amplio en
+   dorado, la firma tipográfica de "Minimalista de Lujo". Sin color fijo en
+   la base: se define por uso para no repetir el bug de .clinical-label en
+   dr-aram-alarcon (una clase reutilizable con color fijo le gana por
+   especificidad de cascada a hover/group-hover del mismo peso). */
+.eyebrow-luxe {
+  font-family: var(--font-jost), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
+/* Línea dorada que se dibuja de izquierda a derecha al entrar en pantalla
+   (ver useScrollTracking / IntersectionObserver en los componentes que la
+   usan) — no en hover. */
+.gold-divider {
+  height: 1px;
+  background: var(--color-gold);
+  width: 0%;
+  transition: width 1.1s var(--ease-luxe);
+}
+.gold-divider.in-view {
+  width: 100%;
+}
+
+/* Revelado suave al hacer scroll: opacidad + leve escala, nunca springs ni
+   clip-path — la personalidad de animación de este sitio. */
+.reveal-luxe {
+  opacity: 0;
+  transform: translateY(14px) scale(0.99);
+  transition: opacity var(--duration-luxe) var(--ease-luxe), transform var(--duration-luxe) var(--ease-luxe);
+}
+.reveal-luxe.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Fallback de imagen — degradado cálido en tonos del logo + línea dorada
+   inferior, nunca un recuadro plano. */
+.image-fallback-luxe {
+  background: linear-gradient(145deg, var(--color-gold-pale) 0%, var(--color-gold-light) 55%, var(--color-gold) 140%);
+  position: relative;
+}
+.image-fallback-luxe::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-ink);
+}
