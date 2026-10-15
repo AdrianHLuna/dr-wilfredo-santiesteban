@@ -12,13 +12,9 @@ import {
   MessageCircle,
   CheckCircle2,
   Award,
-  Sparkles,
   AlertCircle,
-  Activity,
-  Calendar,
 } from "lucide-react";
 import { doctor, diseases, services, symptoms } from "@/data";
-import { formatCredentials } from "@/lib/credentials";
 import { generateHomeSchemas } from "@/lib/schemas";
 import StructuredData from "@/components/StructuredData";
 import DoctorPortrait from "@/components/DoctorPortrait";
@@ -69,13 +65,15 @@ export default function HomePage() {
                   <GoldDivider />
                 </div>
 
-                {/* Cédulas y Acreditaciones Oficiales */}
+                {/* Cédulas y Acreditaciones Oficiales — formato exacto "Céd
+                    Prof: NNNNNNNN (SIGLAS)" (AGENTS.md §3), siempre tomado
+                    de doctor.ts, nunca texto fijo */}
                 <div className="mt-6 flex flex-wrap items-center gap-2.5 text-xs text-[var(--color-ink)]">
                   <span className="border border-[var(--color-line)] bg-white px-3 py-1.5 font-mono shadow-2xs">
-                    Céd. Esp: {doctor.cedulaEspecialidad} (UCM La Habana)
+                    Céd Prof: {doctor.cedula} ({doctor.cedulaInstitucion})
                   </span>
                   <span className="border border-[var(--color-line)] bg-white px-3 py-1.5 font-mono shadow-2xs">
-                    Céd. Prof: {doctor.cedula} (UCM Camagüey)
+                    Céd Esp: {doctor.cedulaEspecialidad} ({doctor.cedulaEspecialidadInstitucion})
                   </span>
                   <span className="border border-[var(--color-gold)]/60 bg-[var(--color-gold-pale)] px-3 py-1.5 font-medium text-[var(--color-ink)]">
                     Miembro AMCG

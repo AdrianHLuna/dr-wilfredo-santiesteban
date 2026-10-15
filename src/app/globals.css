@@ -78,6 +78,20 @@ h4,
   font-weight: 500;
 }
 
+/* Franja de credenciales (StickyHeader) — mismo tratamiento tipográfico que
+   .eyebrow-luxe pero SIN mayúsculas forzadas: las cédulas deben verse
+   siempre "Céd Prof: NNNNNNNN (SIGLAS)" tal cual, nunca en mayúsculas ni
+   minúsculas totales (AGENTS.md §3, instrucción explícita del usuario
+   2026-10-14 — no reusar .eyebrow-luxe para texto de cédulas en ningún
+   sitio). Tracking reducido respecto a .eyebrow-luxe porque texto en
+   minúsculas con tracking de 0.22em se lee mal. */
+.credentials-luxe {
+  font-family: var(--font-jost), system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
 /* Línea dorada que se dibuja de izquierda a derecha al entrar en pantalla
    (ver useScrollTracking / IntersectionObserver en los componentes que la
    usan) — no en hover. */

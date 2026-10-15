@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-line)] bg-[var(--color-cream)]/95 backdrop-blur">
       <div className="hidden md:block border-b border-[var(--color-line)] px-6 py-1.5 text-center">
-        <span className="eyebrow-luxe text-[var(--color-ink)]/70">{formatCredentials(doctor)}</span>
+        <span className="credentials-luxe text-[var(--color-ink)]/70">{formatCredentials(doctor)}</span>
       </div>
       <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-4 px-6 py-4 md:grid-cols-[1fr_auto_1fr]">
         <nav aria-label="Principal" className="hidden md:flex items-center justify-start gap-8">

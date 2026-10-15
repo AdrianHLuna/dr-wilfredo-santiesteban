@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ShieldCheck, Award, Sparkles, MapPin } from "lucide-react";
+import { ShieldCheck, Award, MapPin } from "lucide-react";
+import { doctor } from "@/data";
 
 interface DoctorPortraitProps {
   src: string;
@@ -106,13 +107,14 @@ export default function DoctorPortrait({
           Cirujano General · Especialista en Cirugía de Vesícula, Pared Abdominal y Región Anorrectal
         </p>
 
-        {/* Cédulas */}
+        {/* Cédulas — formato exacto "Céd Prof: NNNNNNNN (SIGLAS)"
+            (AGENTS.md §3), siempre desde doctor.ts, nunca texto fijo */}
         <div className="mt-3.5 flex flex-wrap items-center justify-center gap-2 text-[10px] text-[var(--color-ink)]/80 font-mono">
           <span className="bg-white/80 border border-[var(--color-line)] px-2.5 py-1">
-            Céd. Esp. 14317168
+            Céd Prof: {doctor.cedula} ({doctor.cedulaInstitucion})
           </span>
           <span className="bg-white/80 border border-[var(--color-line)] px-2.5 py-1">
-            Céd. Prof. 13560946
+            Céd Esp: {doctor.cedulaEspecialidad} ({doctor.cedulaEspecialidadInstitucion})
           </span>
         </div>
       </div>
