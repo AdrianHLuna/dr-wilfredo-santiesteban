@@ -28,7 +28,7 @@ export default function Header() {
       <div className="hidden md:block border-b border-[var(--color-line)] px-6 py-1.5 text-center">
         <span className="credentials-luxe text-[var(--color-ink)]/70">{formatCredentials(doctor)}</span>
       </div>
-      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-4 px-6 py-4 md:grid-cols-[1fr_auto_1fr]">
+      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-4 px-6 py-2.5 md:grid-cols-[1fr_auto_1fr] md:py-2">
         <nav aria-label="Principal" className="hidden md:flex items-center justify-start gap-8">
           {leftLinks.map((item) => (
             <Link key={item.href} href={item.href} className="text-sm tracking-wide text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors">
@@ -37,13 +37,13 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href="/" className="md:justify-self-center" aria-label={`${doctor.title} ${doctor.name}`}>
+        <Link href="/" className="md:justify-self-center py-1 flex items-center justify-center" aria-label={`${doctor.title} ${doctor.name}`}>
           <Image
             src="/logo-black.png"
             alt={`${doctor.title} ${doctor.name} — ${doctor.specialistTitle}`}
-            width={240}
-            height={116}
-            className="h-14 w-auto md:h-16"
+            width={320}
+            height={155}
+            className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
             priority
           />
         </Link>

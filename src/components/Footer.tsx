@@ -20,9 +20,9 @@ export default function Footer() {
           <Image
             src="/logo-white.png"
             alt={`${doctor.title} ${doctor.name} — ${doctor.specialistTitle}`}
-            width={240}
-            height={116}
-            className="h-16 w-auto md:h-20"
+            width={320}
+            height={155}
+            className="h-20 w-auto md:h-24 lg:h-28"
           />
           <p className="flex items-center justify-center gap-1.5 text-sm text-white/70">
             <MapPin className="h-4 w-4 text-[var(--color-gold)] shrink-0" aria-hidden="true" />
