@@ -15,7 +15,7 @@ export default function MedicalReviewByline({ lastReviewed }: MedicalReviewBylin
     : null;
 
   return (
-    <p className="text-sm text-muted-foreground border-l-2 border-primary pl-3 py-1">
+    <p className="text-base text-muted-foreground border-l-2 border-primary pl-3.5 py-1.5">
       Revisado médicamente por {doctor.title} {doctor.name} — Cédula Profesional {doctor.cedula}.
       {fecha ? ` Última revisión: ${fecha}.` : ""}
     </p>

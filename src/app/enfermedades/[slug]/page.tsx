@@ -68,9 +68,9 @@ export default async function DiseasePage(props: PageProps<"/enfermedades/[slug]
         <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Enfermedades", href: "/enfermedades" }, { label: disease.name }]} />
 
         <header className="mt-4 mb-10">
-          <h1 className="font-heading text-4xl text-[var(--color-ink)]">{disease.name}</h1>
+          <h1 className="font-heading text-4xl sm:text-5xl text-[var(--color-ink)]">{disease.name}</h1>
           {disease.colloquialNames && disease.colloquialNames.length > 0 && (
-            <p className="mt-2 text-sm text-[var(--color-slate)]">También conocida como: {disease.colloquialNames.join(", ")}</p>
+            <p className="mt-2 text-base text-[var(--color-slate)]">También conocida como: {disease.colloquialNames.join(", ")}</p>
           )}
           <div className="mt-4">
             <MedicalReviewByline lastReviewed={disease.lastReviewed} />
@@ -82,10 +82,10 @@ export default async function DiseasePage(props: PageProps<"/enfermedades/[slug]
             <div className="w-10">
               <GoldDivider />
             </div>
-            <h2 className="mt-3 font-heading text-2xl text-[var(--color-ink)]">{s.title}</h2>
-            {s.text && <p className="mt-3 text-[var(--color-ink)]/80">{s.text}</p>}
+            <h2 className="mt-3 font-heading text-2xl sm:text-3xl text-[var(--color-ink)]">{s.title}</h2>
+            {s.text && <p className="mt-3 text-base sm:text-lg text-[var(--color-ink)]/85 leading-relaxed">{s.text}</p>}
             {s.items && (
-              <ul className="mt-3 space-y-2 text-[var(--color-ink)]/80">
+              <ul className="mt-3 space-y-2.5 text-base sm:text-lg text-[var(--color-ink)]/85 leading-relaxed">
                 {s.items.map((item, i) => (
                   <li key={i} className="border-b border-[var(--color-line)] pb-2">{item}</li>
                 ))}
@@ -98,12 +98,12 @@ export default async function DiseasePage(props: PageProps<"/enfermedades/[slug]
           <div className="w-10">
             <GoldDivider />
           </div>
-          <h2 className="mt-3 font-heading text-2xl text-[var(--color-ink)]">Preguntas frecuentes</h2>
+          <h2 className="mt-3 font-heading text-2xl sm:text-3xl text-[var(--color-ink)]">Preguntas frecuentes</h2>
           <div className="mt-4 divide-y divide-[var(--color-line)]">
             {disease.faqs.map((faq, i) => (
               <div key={i} className="py-4">
-                <h3 className="font-heading text-lg text-[var(--color-ink)]">{faq.question}</h3>
-                <p className="mt-1 text-[var(--color-ink)]/80">{faq.answer}</p>
+                <h3 className="font-heading text-xl text-[var(--color-ink)]">{faq.question}</h3>
+                <p className="mt-1.5 text-base sm:text-lg text-[var(--color-ink)]/85 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -112,7 +112,7 @@ export default async function DiseasePage(props: PageProps<"/enfermedades/[slug]
         {(relatedServices.length > 0 || relatedSymptoms.length > 0) && (
           <RevealOnScroll className="mt-10 border border-[var(--color-gold)] bg-white p-6">
             <p className="eyebrow-luxe text-[var(--color-gold)]">Relacionados</p>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 space-y-2.5 text-base">
               {relatedServices.map((s) => (
                 <li key={s.id}>
                   <Link href={`/servicios/${s.slug}` as Route} className="text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors">
@@ -132,14 +132,14 @@ export default async function DiseasePage(props: PageProps<"/enfermedades/[slug]
         )}
 
         <RevealOnScroll className="mt-10 border-t-2 border-[var(--color-ink)] pt-6 text-center">
-          <p className="font-heading text-xl text-[var(--color-ink)]">
+          <p className="font-heading text-2xl text-[var(--color-ink)]">
             {doctor.title} {doctor.name} atiende {disease.name.toLowerCase()}.
           </p>
           <a
             href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`}
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-block bg-[var(--color-ink)] px-8 py-3 text-xs uppercase tracking-widest text-[var(--color-cream)] shadow-[var(--shadow-soft)] transition-opacity hover:opacity-90"
+            className="mt-4 inline-block bg-[var(--color-ink)] px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-[var(--color-cream)] shadow-[var(--shadow-soft)] transition-opacity hover:opacity-90"
           >
             Agendar valoración
           </a>

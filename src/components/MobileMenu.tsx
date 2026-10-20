@@ -41,7 +41,7 @@ export default function MobileMenu({ items }: MobileMenuProps) {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="flex min-h-[44px] items-center px-4 text-foreground"
+                  className="flex min-h-[48px] items-center px-5 text-base font-medium text-foreground"
                 >
                   {item.label}
                 </Link>

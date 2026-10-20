@@ -27,7 +27,7 @@ export default function ContactPage() {
         <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Contacto" }]} />
         <header className="mt-4 mb-8 text-center">
           <p className="eyebrow-luxe text-[var(--color-gold)]">Agenda tu cita</p>
-          <h1 className="mt-2 font-heading text-4xl text-[var(--color-ink)]">Contacto</h1>
+          <h1 className="mt-2 font-heading text-4xl sm:text-5xl text-[var(--color-ink)]">Contacto</h1>
         </header>
       </div>
 
@@ -39,8 +39,8 @@ export default function ContactPage() {
             <p className="eyebrow-luxe text-[var(--color-gold)]">Horario</p>
             <ul className="mt-3 divide-y divide-[var(--color-line)]">
               {schedule.map((row) => (
-                <li key={row.day} className="flex items-center justify-between py-3 text-sm">
-                  <span className="flex items-center gap-2 text-[var(--color-ink)]">
+                <li key={row.day} className="flex items-center justify-between py-3.5 text-base">
+                  <span className="flex items-center gap-2.5 text-[var(--color-ink)] font-medium">
                     <Clock className="h-4 w-4 text-[var(--color-gold)]" aria-hidden="true" />
                     {row.day}
                   </span>
@@ -48,7 +48,7 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-xs text-[var(--color-slate)]">
+            <p className="mt-4 text-sm text-[var(--color-slate)] leading-relaxed">
               Todas las consultas se realizan mediante cita previa. Existe la posibilidad de consultas fuera del
               horario habitual sujetas a disponibilidad, y las urgencias quirúrgicas se atienden mediante contacto
               telefónico previo y valoración.
@@ -57,9 +57,9 @@ export default function ContactPage() {
 
           <div>
             <p className="eyebrow-luxe text-[var(--color-gold)]">Contacto directo</p>
-            <ul className="mt-3 space-y-3 text-sm">
+            <ul className="mt-3 space-y-3.5 text-base">
               <li>
-                <a href={`tel:${doctor.phone}`} className="flex items-center gap-2 text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors">
+                <a href={`tel:${doctor.phone}`} className="flex items-center gap-2.5 text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors">
                   <Phone className="h-4 w-4 text-[var(--color-gold)]" aria-hidden="true" />
                   {doctor.phone}
                 </a>
@@ -69,14 +69,14 @@ export default function ContactPage() {
                   href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors"
+                  className="flex items-center gap-2.5 text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors"
                 >
                   <MessageCircle className="h-4 w-4 text-[var(--color-gold)]" aria-hidden="true" />
                   WhatsApp
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-[var(--color-ink)]">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-gold)]" aria-hidden="true" />
+              <li className="flex items-start gap-2.5 text-[var(--color-ink)]">
+                <MapPin className="mt-1 h-4 w-4 shrink-0 text-[var(--color-gold)]" aria-hidden="true" />
                 <span>{doctor.address}, {doctor.city}, {doctor.state}</span>
               </li>
             </ul>

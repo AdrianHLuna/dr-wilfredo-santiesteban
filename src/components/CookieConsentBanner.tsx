@@ -64,7 +64,7 @@ export default function CookieConsentBanner() {
       className="fixed inset-x-0 bottom-0 z-[60] border-t border-border bg-background/98 px-4 py-4 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop-blur md:px-6"
     >
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 md:flex-row md:justify-between">
-        <p className="text-center text-sm text-muted-foreground md:text-left">
+        <p className="text-center text-base text-muted-foreground md:text-left leading-relaxed">
           Usamos cookies de análisis para entender el uso del sitio y mejorar la experiencia. Puedes aceptarlas o
           rechazarlas.{" "}
           <Link href="/aviso-de-privacidad" className="underline hover:text-foreground">
@@ -79,7 +79,7 @@ export default function CookieConsentBanner() {
               applyConsent("denied");
               setVisible(false);
             }}
-            className="min-h-[44px] rounded-xl border border-border px-4 py-2 text-sm font-medium"
+            className="min-h-[44px] rounded-xl border border-border px-5 py-2.5 text-base font-medium"
           >
             Rechazar
           </button>
@@ -89,7 +89,7 @@ export default function CookieConsentBanner() {
               applyConsent("granted");
               setVisible(false);
             }}
-            className="min-h-[44px] rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+            className="min-h-[44px] rounded-xl bg-primary px-5 py-2.5 text-base font-medium text-primary-foreground"
           >
             Aceptar
           </button>

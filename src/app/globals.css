@@ -50,10 +50,31 @@
   --font-heading: var(--font-cormorant);
 }
 
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18.5px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 19px;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-jost), system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -62,7 +83,8 @@ h3,
 h4,
 .font-heading {
   font-family: var(--font-cormorant), Georgia, serif;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
+  line-height: 1.25;
 }
 
 /* Eyebrow editorial de este sitio — versalitas con tracking amplio en
@@ -73,9 +95,9 @@ h4,
 .eyebrow-luxe {
   font-family: var(--font-jost), system-ui, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 0.6875rem;
-  font-weight: 500;
+  letter-spacing: 0.18em;
+  font-size: 0.8125rem;
+  font-weight: 600;
 }
 
 /* Franja de credenciales (StickyHeader) — mismo tratamiento tipográfico que
@@ -88,7 +110,7 @@ h4,
 .credentials-luxe {
   font-family: var(--font-jost), system-ui, sans-serif;
   letter-spacing: 0.04em;
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
 }
 

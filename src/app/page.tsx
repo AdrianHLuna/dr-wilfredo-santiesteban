@@ -46,18 +46,18 @@ export default function HomePage() {
             <div className="text-left lg:col-span-7">
               <RevealOnScroll>
                 {/* Eyebrow de Lujo */}
-                <div className="inline-flex items-center gap-2 border border-[var(--color-gold)] bg-white/80 px-3.5 py-1.5 shadow-2xs backdrop-blur-xs">
-                  <Award className="h-3.5 w-3.5 text-[var(--color-gold)]" />
+                <div className="inline-flex items-center gap-2 border border-[var(--color-gold)] bg-white/80 px-4 py-2 shadow-2xs backdrop-blur-xs">
+                  <Award className="h-4 w-4 text-[var(--color-gold)]" />
                   <span className="eyebrow-luxe text-[var(--color-ink)]">
                     Cirujano General Certificado · CMCG Folio C24000624
                   </span>
                 </div>
 
-                <h1 className="mt-4 font-heading text-4xl leading-[1.08] text-[var(--color-ink)] sm:text-5xl lg:text-6xl tracking-tight">
+                <h1 className="mt-5 font-heading text-4xl leading-[1.08] text-[var(--color-ink)] sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight">
                   {doctor.title} {doctor.name}
                 </h1>
 
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--color-slate)] sm:text-lg">
+                <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--color-slate)] sm:text-xl">
                   Especialista en cirugía laparoscópica de vesícula biliar, reparación anatómica de hernias de pared abdominal con malla, resolución de afecciones anorrectales, piel, tejidos blandos y manejo integral de pie diabético en {doctor.city}, {doctor.state}.
                 </p>
 
@@ -68,14 +68,14 @@ export default function HomePage() {
                 {/* Cédulas y Acreditaciones Oficiales — formato exacto "Céd
                     Prof: NNNNNNNN (SIGLAS)" (AGENTS.md §3), siempre tomado
                     de doctor.ts, nunca texto fijo */}
-                <div className="mt-6 flex flex-wrap items-center gap-2.5 text-xs text-[var(--color-ink)]">
-                  <span className="border border-[var(--color-line)] bg-white px-3 py-1.5 font-mono shadow-2xs">
+                <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[var(--color-ink)]">
+                  <span className="border border-[var(--color-line)] bg-white px-3.5 py-1.5 font-mono shadow-2xs">
                     Céd Prof: {doctor.cedula} ({doctor.cedulaInstitucion})
                   </span>
-                  <span className="border border-[var(--color-line)] bg-white px-3 py-1.5 font-mono shadow-2xs">
+                  <span className="border border-[var(--color-line)] bg-white px-3.5 py-1.5 font-mono shadow-2xs">
                     Céd Esp: {doctor.cedulaEspecialidad} ({doctor.cedulaEspecialidadInstitucion})
                   </span>
-                  <span className="border border-[var(--color-gold)]/60 bg-[var(--color-gold-pale)] px-3 py-1.5 font-medium text-[var(--color-ink)]">
+                  <span className="border border-[var(--color-gold)]/60 bg-[var(--color-gold-pale)] px-3.5 py-1.5 font-medium text-[var(--color-ink)]">
                     Miembro AMCG
                   </span>
                 </div>
@@ -86,29 +86,29 @@ export default function HomePage() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 border border-[var(--color-ink)] bg-[var(--color-ink)] px-7 py-3.5 text-xs font-semibold uppercase tracking-widest text-[var(--color-cream)] shadow-[var(--shadow-soft)] transition-all hover:bg-[var(--color-gold)] hover:border-[var(--color-gold)] hover:text-[var(--color-ink)]"
+                    className="inline-flex items-center justify-center gap-2.5 border border-[var(--color-ink)] bg-[var(--color-ink)] px-8 py-4 text-sm font-semibold uppercase tracking-wider text-[var(--color-cream)] shadow-[var(--shadow-soft)] transition-all hover:bg-[var(--color-gold)] hover:border-[var(--color-gold)] hover:text-[var(--color-ink)]"
                   >
-                    <MessageCircle className="h-4 w-4" />
+                    <MessageCircle className="h-5 w-5" />
                     <span>Agendar Consulta ($900 MXN)</span>
                   </a>
 
                   <a
                     href={`tel:${doctor.emergencyPhone ?? doctor.phone}`}
-                    className="inline-flex items-center justify-center gap-2 border border-red-700 bg-white px-7 py-3.5 text-xs font-semibold uppercase tracking-widest text-red-700 transition-colors hover:bg-red-700 hover:text-white"
+                    className="inline-flex items-center justify-center gap-2.5 border border-red-700 bg-white px-8 py-4 text-sm font-semibold uppercase tracking-wider text-red-700 transition-colors hover:bg-red-700 hover:text-white"
                   >
-                    <Phone className="h-4 w-4" />
+                    <Phone className="h-5 w-5" />
                     <span>Urgencias · {doctor.emergencyPhone ?? doctor.phone}</span>
                   </a>
                 </div>
 
                 {/* Micro-resumen de sede y horario */}
-                <div className="mt-8 border-t border-[var(--color-line)] pt-4 text-xs text-[var(--color-slate)] space-y-1.5">
-                  <p className="flex items-center gap-2">
-                    <MapPin className="h-3.5 w-3.5 text-[var(--color-gold)] shrink-0" />
+                <div className="mt-8 border-t border-[var(--color-line)] pt-4 text-sm text-[var(--color-slate)] space-y-2">
+                  <p className="flex items-center gap-2.5">
+                    <MapPin className="h-4 w-4 text-[var(--color-gold)] shrink-0" />
                     <span>Calle 16 Poniente Sur #428, Col. Xamaipak, Tuxtla Gutiérrez, Chiapas.</span>
                   </p>
-                  <p className="flex items-center gap-2">
-                    <Clock className="h-3.5 w-3.5 text-[var(--color-gold)] shrink-0" />
+                  <p className="flex items-center gap-2.5">
+                    <Clock className="h-4 w-4 text-[var(--color-gold)] shrink-0" />
                     <span>Lun a Vie 10:00 - 13:00 · Sáb 11:00 - 17:00 (Previa Cita)</span>
                   </p>
                 </div>
@@ -140,29 +140,29 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 divide-y divide-[var(--color-line)] sm:grid-cols-4 sm:divide-x sm:divide-y-0">
           <RevealOnScroll delay={0}>
             <div className="px-6 py-10 text-center">
-              <p className="font-heading text-4xl text-[var(--color-gold)]">+3,500</p>
-              <p className="eyebrow-luxe mt-2 text-[var(--color-ink)]/75">Pacientes Atendidos</p>
+              <p className="font-heading text-4xl sm:text-5xl text-[var(--color-gold)]">+3,500</p>
+              <p className="eyebrow-luxe mt-2.5 text-[var(--color-ink)]/80">Pacientes Atendidos</p>
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll delay={100}>
             <div className="px-6 py-10 text-center">
-              <p className="font-heading text-4xl text-[var(--color-gold)]">+400</p>
-              <p className="eyebrow-luxe mt-2 text-[var(--color-ink)]/75">Cirugías Realizadas</p>
+              <p className="font-heading text-4xl sm:text-5xl text-[var(--color-gold)]">+400</p>
+              <p className="eyebrow-luxe mt-2.5 text-[var(--color-ink)]/80">Cirugías Realizadas</p>
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll delay={200}>
             <div className="px-6 py-10 text-center">
-              <p className="font-heading text-4xl text-[var(--color-gold)]">+4 Años</p>
-              <p className="eyebrow-luxe mt-2 text-[var(--color-ink)]/75">Práctica Quirúrgica</p>
+              <p className="font-heading text-4xl sm:text-5xl text-[var(--color-gold)]">+4 Años</p>
+              <p className="eyebrow-luxe mt-2.5 text-[var(--color-ink)]/80">Práctica Quirúrgica</p>
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll delay={300}>
             <div className="px-6 py-10 text-center">
-              <p className="font-heading text-4xl text-[var(--color-gold)]">CMCG</p>
-              <p className="eyebrow-luxe mt-2 text-[var(--color-ink)]/75">Certificación Vigente</p>
+              <p className="font-heading text-4xl sm:text-5xl text-[var(--color-gold)]">CMCG</p>
+              <p className="eyebrow-luxe mt-2.5 text-[var(--color-ink)]/80">Certificación Vigente</p>
             </div>
           </RevealOnScroll>
         </div>
@@ -173,7 +173,7 @@ export default function HomePage() {
         <RevealOnScroll>
           <div className="text-center">
             <p className="eyebrow-luxe text-[var(--color-gold)]">Semblanza Médica</p>
-            <h2 className="mt-2 font-heading text-3xl text-[var(--color-ink)] sm:text-4xl">
+            <h2 className="mt-2 font-heading text-3xl text-[var(--color-ink)] sm:text-4xl lg:text-5xl">
               Sobre el {doctor.title} {doctor.name}
             </h2>
             <div className="mx-auto mt-3 w-16">
@@ -203,42 +203,42 @@ export default function HomePage() {
           {/* BIO, FILOSOFÍA Y FORMACIÓN */}
           <div className="lg:col-span-7 space-y-6">
             <RevealOnScroll delay={150}>
-              <p className="text-base leading-relaxed text-[var(--color-ink)]/90">
+              <p className="text-lg leading-relaxed text-[var(--color-ink)]/90">
                 {doctor.bio}
               </p>
 
               {/* Callout de Filosofía Médica */}
-              <div className="mt-5 border-l-2 border-[var(--color-gold)] bg-white p-5 shadow-2xs">
-                <span className="eyebrow-luxe text-[var(--color-gold)] block mb-1">
+              <div className="mt-5 border-l-2 border-[var(--color-gold)] bg-white p-6 shadow-2xs">
+                <span className="eyebrow-luxe text-[var(--color-gold)] block mb-1.5">
                   Filosofía Quirúrgica
                 </span>
-                <p className="italic text-sm text-[var(--color-slate)] leading-relaxed">
+                <p className="italic text-base text-[var(--color-slate)] leading-relaxed">
                   &ldquo;{doctor.philosophy}&rdquo;
                 </p>
               </div>
 
               {/* Cédulas Profesionales */}
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div className="border border-[var(--color-line)] bg-white p-4">
-                  <span className="text-[10px] uppercase tracking-wider text-[var(--color-slate)] block">
+                  <span className="text-xs uppercase tracking-wider text-[var(--color-slate)] block">
                     Cédula de Especialidad
                   </span>
-                  <span className="font-mono text-base font-bold text-[var(--color-ink)] block mt-0.5">
+                  <span className="font-mono text-lg font-bold text-[var(--color-ink)] block mt-0.5">
                     {doctor.cedulaEspecialidad}
                   </span>
-                  <span className="text-xs text-[var(--color-slate)] mt-0.5 block">
+                  <span className="text-sm text-[var(--color-slate)] mt-0.5 block">
                     {doctor.cedulaEspecialidadInstitucion}
                   </span>
                 </div>
 
                 <div className="border border-[var(--color-line)] bg-white p-4">
-                  <span className="text-[10px] uppercase tracking-wider text-[var(--color-slate)] block">
+                  <span className="text-xs uppercase tracking-wider text-[var(--color-slate)] block">
                     Cédula Profesional Médico Cirujano
                   </span>
-                  <span className="font-mono text-base font-bold text-[var(--color-ink)] block mt-0.5">
+                  <span className="font-mono text-lg font-bold text-[var(--color-ink)] block mt-0.5">
                     {doctor.cedula}
                   </span>
-                  <span className="text-xs text-[var(--color-slate)] mt-0.5 block">
+                  <span className="text-sm text-[var(--color-slate)] mt-0.5 block">
                     {doctor.cedulaInstitucion}
                   </span>
                 </div>
@@ -249,14 +249,14 @@ export default function HomePage() {
                 <p className="eyebrow-luxe text-[var(--color-gold)] mb-3">
                   Acreditaciones Médicas
                 </p>
-                <ul className="divide-y divide-[var(--color-line)] text-sm">
+                <ul className="divide-y divide-[var(--color-line)] text-base">
                   {[
                     ...doctor.education,
                     ...doctor.certifications.map((c) => ({ degree: c.name, institution: c.institution, year: undefined })),
                   ].map((item) => (
-                    <li key={item.degree} className="flex flex-col gap-0.5 py-2.5 sm:flex-row sm:items-baseline sm:justify-between">
+                    <li key={item.degree} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between">
                       <span className="font-medium text-[var(--color-ink)]">{item.degree}</span>
-                      <span className="text-xs text-[var(--color-slate)] sm:text-right">{item.institution}</span>
+                      <span className="text-sm text-[var(--color-slate)] sm:text-right">{item.institution}</span>
                     </li>
                   ))}
                 </ul>
@@ -271,23 +271,23 @@ export default function HomePage() {
       <section className="border-t border-[var(--color-line)] bg-[var(--color-ink)] text-[var(--color-cream)] px-6 py-14">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-1.5">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[var(--color-gold)]">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--color-gold)]">
                 <AlertCircle className="w-4 h-4 text-amber-400" />
                 <span>Protocolo de Dolor Abdominal Agudo</span>
               </div>
-              <h3 className="font-heading text-2xl sm:text-3xl text-white">
+              <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white">
                 ¿Presentas dolor súbito de vesícula, apéndice o hernia complicada?
               </h3>
-              <p className="text-xs sm:text-sm text-white/70 max-w-2xl">
+              <p className="text-sm sm:text-base text-white/80 max-w-2xl leading-relaxed">
                 Atención quirúrgica urgente disponible mediante enlace telefónico previo para coordinar valoración y quirófano en Tuxtla Gutiérrez.
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <div className="flex flex-wrap items-center gap-3.5 shrink-0">
               <a
                 href={`tel:${doctor.emergencyPhone ?? doctor.phone}`}
-                className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-800 text-white px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-800 text-white px-7 py-4 text-sm font-bold uppercase tracking-wider transition-colors shadow-md"
               >
                 <Phone className="w-4 h-4" />
                 <span>Llamar Urgencias</span>
@@ -296,7 +296,7 @@ export default function HomePage() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-white/20 bg-white/10 hover:bg-white/20 text-white px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors"
+                className="inline-flex items-center gap-2.5 border border-white/20 bg-white/10 hover:bg-white/20 text-white px-6 py-4 text-sm font-semibold uppercase tracking-wider transition-colors"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-400" />
                 <span>Escribir por WhatsApp</span>
@@ -310,19 +310,19 @@ export default function HomePage() {
       <section id="enfermedades" className="border-t border-[var(--color-line)] bg-white px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <RevealOnScroll>
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
               <div>
                 <p className="eyebrow-luxe text-[var(--color-gold)]">Catálogo Clínico</p>
-                <h2 className="mt-1 font-heading text-3xl text-[var(--color-ink)] sm:text-4xl">
+                <h2 className="mt-1 font-heading text-3xl text-[var(--color-ink)] sm:text-4xl lg:text-5xl">
                   Enfermedades que Atiende
                 </h2>
               </div>
               <Link
                 href="/enfermedades"
-                className="text-sm font-medium text-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors inline-flex items-center gap-1"
+                className="text-base font-medium text-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors inline-flex items-center gap-1.5"
               >
                 <span>Ver todas las patologías ({diseases.length})</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </RevealOnScroll>
@@ -349,19 +349,19 @@ export default function HomePage() {
       <section id="servicios" className="border-t border-[var(--color-line)] px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <RevealOnScroll>
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
               <div>
                 <p className="eyebrow-luxe text-[var(--color-gold)]">Técnicas Quirúrgicas</p>
-                <h2 className="mt-1 font-heading text-3xl text-[var(--color-ink)] sm:text-4xl">
+                <h2 className="mt-1 font-heading text-3xl text-[var(--color-ink)] sm:text-4xl lg:text-5xl">
                   Servicios y Procedimientos
                 </h2>
               </div>
               <Link
                 href="/servicios"
-                className="text-sm font-medium text-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors inline-flex items-center gap-1"
+                className="text-base font-medium text-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors inline-flex items-center gap-1.5"
               >
                 <span>Ver todos los procedimientos ({services.length})</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </RevealOnScroll>
@@ -388,19 +388,19 @@ export default function HomePage() {
       <section id="sintomas" className="border-t border-[var(--color-line)] bg-white px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <RevealOnScroll>
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
               <div>
                 <p className="eyebrow-luxe text-[var(--color-gold)]">Orientación al Paciente</p>
-                <h2 className="mt-1 font-heading text-3xl text-[var(--color-ink)] sm:text-4xl">
+                <h2 className="mt-1 font-heading text-3xl text-[var(--color-ink)] sm:text-4xl lg:text-5xl">
                   Síntomas y Cuadros Clínicos
                 </h2>
               </div>
               <Link
                 href="/sintomas"
-                className="text-sm font-medium text-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors inline-flex items-center gap-1"
+                className="text-base font-medium text-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors inline-flex items-center gap-1.5"
               >
                 <span>Ver todos los síntomas ({symptoms.length})</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </RevealOnScroll>
@@ -430,29 +430,29 @@ export default function HomePage() {
             <div className="grid grid-cols-1 gap-10 border border-[var(--color-gold)] bg-white p-8 sm:p-12 md:grid-cols-2 shadow-[var(--shadow-soft)]">
               <div>
                 <p className="eyebrow-luxe text-[var(--color-gold)]">Honorarios Quirúrgicos</p>
-                <h2 className="mt-2 font-heading text-4xl text-[var(--color-ink)]">
-                  ${doctor.consultationPrice.toLocaleString("es-MX")} <span className="text-xl text-[var(--color-slate)]">MXN</span>
+                <h2 className="mt-2 font-heading text-4xl sm:text-5xl text-[var(--color-ink)]">
+                  ${doctor.consultationPrice.toLocaleString("es-MX")} <span className="text-2xl text-[var(--color-slate)]">MXN</span>
                 </h2>
-                <p className="mt-1 text-sm text-[var(--color-slate)]">
+                <p className="mt-2 text-base text-[var(--color-slate)]">
                   Consulta de valoración quirúrgica de primera vez.
                 </p>
 
-                <div className="mt-6 space-y-2 text-xs text-[var(--color-slate)] border-t border-[var(--color-line)] pt-4">
-                  <p className="flex items-center gap-2">
+                <div className="mt-6 space-y-2.5 text-sm text-[var(--color-slate)] border-t border-[var(--color-line)] pt-4">
+                  <p className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Exploración física y revisión de ultrasonidos/laboratorios previos</span>
                   </p>
-                  <p className="flex items-center gap-2">
+                  <p className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Diagnóstico quirúrgico claro y explicación del procedimiento</span>
                   </p>
-                  <p className="flex items-center gap-2">
+                  <p className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Presupuesto personalizado para quirófanos privados en Tuxtla</span>
                   </p>
                 </div>
 
-                <p className="mt-4 text-xs font-semibold text-amber-800 bg-amber-50 p-2.5 border border-amber-200">
+                <p className="mt-4 text-sm font-semibold text-amber-800 bg-amber-50 p-3 border border-amber-200">
                   Nota: No se aceptan seguros de gastos médicos mayores.
                 </p>
               </div>
@@ -463,9 +463,9 @@ export default function HomePage() {
                   {doctor.paymentMethods.map((method) => {
                     const Icon = paymentIcons[method] ?? ShieldCheck;
                     return (
-                      <li key={method} className="flex items-center gap-3 text-sm text-[var(--color-ink)] border border-[var(--color-line)] p-3 bg-[#FAF8F5]">
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-[var(--color-gold)] bg-white text-[var(--color-gold)]">
-                          <Icon className="h-4 w-4" aria-hidden="true" />
+                      <li key={method} className="flex items-center gap-3.5 text-base text-[var(--color-ink)] border border-[var(--color-line)] p-3.5 bg-[#FAF8F5]">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[var(--color-gold)] bg-white text-[var(--color-gold)]">
+                          <Icon className="h-5 w-5" aria-hidden="true" />
                         </span>
                         <span className="font-medium">{method}</span>
                       </li>
@@ -473,7 +473,7 @@ export default function HomePage() {
                   })}
                 </ul>
 
-                <div className="mt-6 pt-4 border-t border-[var(--color-line)] text-xs text-[var(--color-slate)]">
+                <div className="mt-6 pt-4 border-t border-[var(--color-line)] text-sm text-[var(--color-slate)]">
                   <p>Facturación electrónica disponible para pacientes que requieran comprobante fiscal.</p>
                 </div>
               </div>
@@ -489,13 +489,13 @@ export default function HomePage() {
             <Award className="w-10 h-10 text-[var(--color-gold)]" />
           </div>
           <p className="eyebrow-luxe text-[var(--color-gold)]">Atención Quirúrgica Personalizada</p>
-          <h2 className="mx-auto mt-2 max-w-2xl font-heading text-3xl text-[var(--color-ink)] sm:text-4xl md:text-5xl">
+          <h2 className="mx-auto mt-2 max-w-2xl font-heading text-4xl text-[var(--color-ink)] sm:text-5xl md:text-6xl">
             Agenda tu Consulta con el {doctor.title} {doctor.name}
           </h2>
           <div className="mx-auto mt-4 w-20">
             <GoldDivider />
           </div>
-          <p className="mx-auto mt-4 max-w-xl text-sm sm:text-base text-[var(--color-slate)]">
+          <p className="mx-auto mt-4 max-w-xl text-base sm:text-lg text-[var(--color-slate)]">
             Consulta externa y valoración preoperatoria en Colonia Xamaipak, Tuxtla Gutiérrez, Chiapas.
           </p>
 
@@ -504,16 +504,16 @@ export default function HomePage() {
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 border border-[var(--color-ink)] bg-[var(--color-ink)] px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-[var(--color-cream)] shadow-[var(--shadow-soft)] transition-all hover:bg-[var(--color-gold)] hover:border-[var(--color-gold)] hover:text-[var(--color-ink)]"
+              className="inline-flex items-center gap-2.5 border border-[var(--color-ink)] bg-[var(--color-ink)] px-9 py-4 text-sm font-bold uppercase tracking-wider text-[var(--color-cream)] shadow-[var(--shadow-soft)] transition-all hover:bg-[var(--color-gold)] hover:border-[var(--color-gold)] hover:text-[var(--color-ink)]"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-5 h-5" />
               <span>Escribir por WhatsApp</span>
             </a>
             <a
               href={`tel:${doctor.phone}`}
-              className="inline-flex items-center gap-2 border border-[var(--color-ink)] bg-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-[var(--color-cream)]"
+              className="inline-flex items-center gap-2.5 border border-[var(--color-ink)] bg-white px-9 py-4 text-sm font-bold uppercase tracking-wider text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-[var(--color-cream)]"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-5 h-5" />
               <span>Llamar al Consultorio</span>
             </a>
           </div>

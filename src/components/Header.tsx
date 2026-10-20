@@ -25,13 +25,13 @@ const rightLinks = navItems.slice(3);
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-line)] bg-[var(--color-cream)]/95 backdrop-blur">
-      <div className="hidden md:block border-b border-[var(--color-line)] px-6 py-1.5 text-center">
-        <span className="credentials-luxe text-[var(--color-ink)]/70">{formatCredentials(doctor)}</span>
+      <div className="hidden md:block border-b border-[var(--color-line)] px-6 py-2 text-center">
+        <span className="credentials-luxe text-[var(--color-ink)]/75">{formatCredentials(doctor)}</span>
       </div>
-      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-4 px-6 py-2.5 md:grid-cols-[1fr_auto_1fr] md:py-2">
+      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-4 px-6 py-2.5 md:grid-cols-[1fr_auto_1fr] md:py-2.5">
         <nav aria-label="Principal" className="hidden md:flex items-center justify-start gap-8">
           {leftLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm tracking-wide text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors">
+            <Link key={item.href} href={item.href} className="text-base font-medium tracking-wide text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors">
               {item.label}
             </Link>
           ))}
@@ -51,7 +51,7 @@ export default function Header() {
         <div className="hidden md:flex items-center justify-end gap-8">
           <nav aria-label="Secundaria" className="flex items-center gap-8">
             {rightLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm tracking-wide text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors">
+              <Link key={item.href} href={item.href} className="text-base font-medium tracking-wide text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors">
                 {item.label}
               </Link>
             ))}
@@ -60,7 +60,7 @@ export default function Header() {
             href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`}
             target="_blank"
             rel="noreferrer"
-            className="whitespace-nowrap border border-[var(--color-ink)] px-4 py-2 text-xs tracking-widest uppercase text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-[var(--color-cream)]"
+            className="whitespace-nowrap border border-[var(--color-ink)] px-5 py-2.5 text-sm font-semibold tracking-wider uppercase text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-[var(--color-cream)]"
           >
             Agendar
           </a>

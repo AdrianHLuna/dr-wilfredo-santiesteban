@@ -18,7 +18,7 @@ export default function StickyBottomNav() {
       <a
         href={`tel:${doctor.phone}`}
         onClick={() => trackEvent("clic_agendar_cita", { source: "sticky_nav" })}
-        className="relative flex w-[70%] min-h-[44px] items-center justify-center gap-2 bg-primary py-3 text-sm font-semibold text-primary-foreground"
+        className="relative flex w-[70%] min-h-[44px] items-center justify-center gap-2 bg-primary py-3.5 text-base font-semibold text-primary-foreground"
       >
         <span className="absolute inset-0 motion-safe:animate-ping bg-primary/50 -z-10" aria-hidden="true" />
         Agendar Cita
@@ -28,7 +28,7 @@ export default function StickyBottomNav() {
         target="_blank"
         rel="noreferrer"
         onClick={() => trackEvent("clic_whatsapp", { source: "sticky_nav" })}
-        className="flex w-[30%] min-h-[44px] items-center justify-center bg-[#25D366] py-3 text-sm font-semibold text-white"
+        className="flex w-[30%] min-h-[44px] items-center justify-center bg-[#25D366] py-3.5 text-base font-semibold text-white"
       >
         WhatsApp
       </a>

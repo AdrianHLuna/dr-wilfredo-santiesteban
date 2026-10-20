@@ -45,18 +45,18 @@ export default function DoctorPortrait({
       
       {/* Badges sobre la fotografía oficial */}
       <div className="absolute top-4 left-4 z-10">
-        <span className="inline-flex items-center gap-1.5 bg-[var(--color-ink)]/90 backdrop-blur-md px-3 py-1.5 text-[11px] font-medium tracking-wider text-[var(--color-gold)] border border-[var(--color-gold)]/40 shadow-sm">
-          <ShieldCheck className="w-3.5 h-3.5 text-[var(--color-gold)]" />
+        <span className="inline-flex items-center gap-1.5 bg-[var(--color-ink)]/90 backdrop-blur-md px-3.5 py-1.5 text-xs sm:text-sm font-medium tracking-wider text-[var(--color-gold)] border border-[var(--color-gold)]/40 shadow-sm">
+          <ShieldCheck className="w-4 h-4 text-[var(--color-gold)]" />
           CMCG C24000624
         </span>
       </div>
 
-      <div className="absolute bottom-4 left-4 right-4 z-10 p-3.5 bg-[var(--color-ink)]/90 backdrop-blur-md border border-[var(--color-gold)]/30 text-white shadow-lg">
-        <div className="flex items-center justify-between text-xs">
-          <span className="font-heading text-sm text-[var(--color-gold-light)]">{alt}</span>
-          <span className="text-[10px] uppercase tracking-widest text-[var(--color-gold)]">Tuxtla Gtz.</span>
+      <div className="absolute bottom-4 left-4 right-4 z-10 p-4 bg-[var(--color-ink)]/90 backdrop-blur-md border border-[var(--color-gold)]/30 text-white shadow-lg">
+        <div className="flex items-center justify-between text-sm">
+          <span className="font-heading text-base text-[var(--color-gold-light)]">{alt}</span>
+          <span className="text-xs uppercase tracking-widest text-[var(--color-gold)]">Tuxtla Gtz.</span>
         </div>
-        <p className="text-[11px] text-white/75 mt-0.5">{subtitle}</p>
+        <p className="text-xs text-white/80 mt-1">{subtitle}</p>
       </div>
     </div>
   ) : (
@@ -75,11 +75,11 @@ export default function DoctorPortrait({
 
       {/* Cabecera del sello */}
       <div className="relative z-10 w-full flex items-center justify-between border-b border-[var(--color-gold)]/30 pb-3">
-        <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-semibold text-[var(--color-gold)]">
-          <Award className="w-3.5 h-3.5 text-[var(--color-gold)]" />
+        <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.18em] font-semibold text-[var(--color-gold)]">
+          <Award className="w-4 h-4 text-[var(--color-gold)]" />
           Certificación Vigente
         </span>
-        <span className="text-[10px] font-mono text-[var(--color-slate)] bg-white/70 px-2 py-0.5 border border-[var(--color-line)]">
+        <span className="text-xs font-mono text-[var(--color-slate)] bg-white/70 px-2.5 py-0.5 border border-[var(--color-line)]">
           Folio C24000624
         </span>
       </div>
@@ -97,19 +97,19 @@ export default function DoctorPortrait({
           />
         </div>
 
-        <span className="eyebrow-luxe text-[var(--color-gold)] text-[11px] mb-1">
+        <span className="eyebrow-luxe text-[var(--color-gold)] text-xs mb-1">
           Consejo Mexicano de Cirugía General
         </span>
         <h3 className="font-heading text-2xl sm:text-3xl text-[var(--color-ink)] leading-tight max-w-xs">
           Dr. Wilfredo Marcial Santiesteban Herrera
         </h3>
-        <p className="mt-1.5 text-xs text-[var(--color-slate)] max-w-xs font-sans">
+        <p className="mt-1.5 text-sm text-[var(--color-slate)] max-w-xs font-sans">
           Cirujano General · Especialista en Cirugía de Vesícula, Pared Abdominal y Región Anorrectal
         </p>
 
         {/* Cédulas — formato exacto "Céd Prof: NNNNNNNN (SIGLAS)"
             (AGENTS.md §3), siempre desde doctor.ts, nunca texto fijo */}
-        <div className="mt-3.5 flex flex-wrap items-center justify-center gap-2 text-[10px] text-[var(--color-ink)]/80 font-mono">
+        <div className="mt-3.5 flex flex-wrap items-center justify-center gap-2 text-xs text-[var(--color-ink)]/90 font-mono">
           <span className="bg-white/80 border border-[var(--color-line)] px-2.5 py-1">
             Céd Prof: {doctor.cedula} ({doctor.cedulaInstitucion})
           </span>
@@ -123,33 +123,33 @@ export default function DoctorPortrait({
       <div className="relative z-10 w-full pt-3 border-t border-[var(--color-gold)]/30 space-y-2">
         <div className="grid grid-cols-3 divide-x divide-[var(--color-gold)]/30 text-center">
           <div>
-            <span className="font-heading text-base sm:text-lg font-bold text-[var(--color-gold)] block">
+            <span className="font-heading text-lg sm:text-xl font-bold text-[var(--color-gold)] block">
               +3,500
             </span>
-            <span className="text-[9px] uppercase tracking-wider text-[var(--color-slate)] block">
+            <span className="text-xs uppercase tracking-wider text-[var(--color-slate)] block">
               Pacientes
             </span>
           </div>
           <div>
-            <span className="font-heading text-base sm:text-lg font-bold text-[var(--color-gold)] block">
+            <span className="font-heading text-lg sm:text-xl font-bold text-[var(--color-gold)] block">
               +400
             </span>
-            <span className="text-[9px] uppercase tracking-wider text-[var(--color-slate)] block">
+            <span className="text-xs uppercase tracking-wider text-[var(--color-slate)] block">
               Cirugías
             </span>
           </div>
           <div>
-            <span className="font-heading text-base sm:text-lg font-bold text-[var(--color-gold)] block">
+            <span className="font-heading text-lg sm:text-xl font-bold text-[var(--color-gold)] block">
               +4 Años
             </span>
-            <span className="text-[9px] uppercase tracking-wider text-[var(--color-slate)] block">
+            <span className="text-xs uppercase tracking-wider text-[var(--color-slate)] block">
               Trayectoria
             </span>
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-1.5 text-[10px] text-[var(--color-slate)] pt-1">
-          <MapPin className="w-3 h-3 text-[var(--color-gold)]" />
+        <div className="flex items-center justify-center gap-1.5 text-xs text-[var(--color-slate)] pt-1">
+          <MapPin className="w-3.5 h-3.5 text-[var(--color-gold)]" />
           <span>Colonia Xamaipak · Tuxtla Gutiérrez, Chiapas</span>
         </div>
       </div>

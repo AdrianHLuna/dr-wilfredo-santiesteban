@@ -60,7 +60,7 @@ export default function EntityCard({
                 <div className="w-12 h-12 rounded-full border border-[var(--color-gold)]/30 flex items-center justify-center bg-white/60 mb-1">
                   <Stethoscope className="h-6 w-6 text-[var(--color-gold)]" aria-hidden="true" />
                 </div>
-                <span className="text-[10px] uppercase tracking-widest text-[var(--color-slate)] font-medium">
+                <span className="text-xs uppercase tracking-widest text-[var(--color-slate)] font-medium">
                   Cirugía General
                 </span>
               </div>
@@ -81,10 +81,10 @@ export default function EntityCard({
 
           <div className="flex flex-col gap-2 p-6">
             <p className="eyebrow-luxe text-[var(--color-gold)]">{eyebrow}</p>
-            <h3 className="font-heading text-xl text-[var(--color-ink)] leading-snug group-hover:text-[var(--color-gold)] transition-colors">
+            <h3 className="font-heading text-2xl text-[var(--color-ink)] leading-snug group-hover:text-[var(--color-gold)] transition-colors">
               {title}
             </h3>
-            <p className="line-clamp-2 text-sm text-[var(--color-slate)] leading-relaxed">
+            <p className="line-clamp-2 text-base text-[var(--color-slate)] leading-relaxed">
               {description}
             </p>
           </div>
@@ -92,9 +92,9 @@ export default function EntityCard({
 
         {/* Botón institucional de acción */}
         <div className="px-6 pb-6 pt-2">
-          <div className="flex items-center justify-between border-t border-[var(--color-line)] pt-4 text-xs font-medium uppercase tracking-wider text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-gold)]">
+          <div className="flex items-center justify-between border-t border-[var(--color-line)] pt-4 text-sm font-medium uppercase tracking-wider text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-gold)]">
             <span>{label}</span>
-            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </div>
         </div>
       </Link>

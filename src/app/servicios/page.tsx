@@ -13,10 +13,10 @@ export default function ServicesIndexPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 pb-20 pt-6">
       <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Servicios" }]} />
-      <header className="mt-4 mb-10 text-center">
+      <header className="mt-4 mb-12 text-center">
         <p className="eyebrow-luxe text-[var(--color-gold)]">Procedimientos</p>
-        <h1 className="mt-2 font-heading text-4xl text-[var(--color-ink)]">Servicios y procedimientos</h1>
-        <p className="mx-auto mt-3 max-w-2xl text-[var(--color-slate)]">
+        <h1 className="mt-2 font-heading text-4xl sm:text-5xl text-[var(--color-ink)]">Servicios y procedimientos</h1>
+        <p className="mx-auto mt-3 max-w-2xl text-base sm:text-lg text-[var(--color-slate)] leading-relaxed">
           Los {services.length} procedimientos de Cirugía General que el Dr. Wilfredo Santiesteban realiza con mayor frecuencia.
         </p>
       </header>

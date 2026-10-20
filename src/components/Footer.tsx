@@ -24,11 +24,11 @@ export default function Footer() {
             height={155}
             className="h-20 w-auto md:h-24 lg:h-28"
           />
-          <p className="flex items-center justify-center gap-1.5 text-sm text-white/70">
+          <p className="flex items-center justify-center gap-2 text-base text-white/80">
             <MapPin className="h-4 w-4 text-[var(--color-gold)] shrink-0" aria-hidden="true" />
             <span>{doctor.address}, {doctor.city}, {doctor.state}</span>
           </p>
-          <a href={`tel:${doctor.phone}`} className="flex items-center gap-1.5 text-sm text-white hover:text-[var(--color-gold)] transition-colors">
+          <a href={`tel:${doctor.phone}`} className="flex items-center gap-2 text-base text-white hover:text-[var(--color-gold)] transition-colors">
             <Phone className="h-4 w-4 text-[var(--color-gold)]" aria-hidden="true" />
             {doctor.phone}
           </a>
@@ -37,29 +37,29 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 border-b border-white/10 py-12 sm:grid-cols-3">
           {columns.map((col) => (
             <div key={col.title}>
-              <h3 className="font-heading text-lg text-[var(--color-gold)]">{col.title}</h3>
+              <h3 className="font-heading text-xl text-[var(--color-gold)]">{col.title}</h3>
               <ul className="mt-4 space-y-2.5">
                 {col.items.slice(0, MAX_LINKS).map((item) => (
                   <li key={item.id}>
-                    <Link href={`${col.base}/${item.slug}` as `${typeof col.base}/${string}`} className="text-sm text-white/75 hover:text-white transition-colors">
+                    <Link href={`${col.base}/${item.slug}` as `${typeof col.base}/${string}`} className="text-base text-white/80 hover:text-white transition-colors">
                       {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <Link href={col.base as "/enfermedades"} className="mt-4 inline-block text-sm text-[var(--color-gold)] hover:text-white transition-colors">
+              <Link href={col.base as "/enfermedades"} className="mt-4 inline-block text-base font-medium text-[var(--color-gold)] hover:text-white transition-colors">
                 Ver todos →
               </Link>
             </div>
           ))}
         </div>
 
-        <div className="flex flex-col gap-4 pt-8 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 pt-8 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-2xl leading-relaxed">
             La información de este sitio tiene fines educativos e informativos y no sustituye una consulta médica
             profesional. Ante cualquier urgencia, acude de inmediato a un servicio de urgencias.
           </p>
-          <Link href="/aviso-de-privacidad" className="shrink-0 text-white/70 hover:text-white transition-colors">
+          <Link href="/aviso-de-privacidad" className="shrink-0 text-sm text-white/70 hover:text-white transition-colors">
             Aviso de privacidad
           </Link>
         </div>

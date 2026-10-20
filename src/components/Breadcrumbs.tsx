@@ -34,10 +34,10 @@ export default function Breadcrumbs({ items, isDark = false }: BreadcrumbsProps)
   return (
     <>
       <StructuredData data={schema} />
-      <nav aria-label="Breadcrumb" className={`py-3 px-4 text-sm ${textClass}`}>
-        <ol className="flex flex-wrap items-center gap-1.5">
+      <nav aria-label="Breadcrumb" className={`py-3 px-4 text-sm sm:text-base ${textClass}`}>
+        <ol className="flex flex-wrap items-center gap-2">
           {items.map((item, index) => (
-            <li key={index} className="flex items-center gap-1.5">
+            <li key={index} className="flex items-center gap-2">
               {index > 0 && <span aria-hidden="true">/</span>}
               {item.href ? (
                 <Link href={item.href as Route} className={linkClass}>
