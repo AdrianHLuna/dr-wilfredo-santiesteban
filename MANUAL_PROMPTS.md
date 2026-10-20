@@ -25,6 +25,8 @@ Instrucciones generales de color y estilo:
 - Composition: Centered, calm, editorial framing with generous negative space — elegant, never cluttered or clinical-cold.
 - Suffixes: realistic medical CGI or high-fidelity clinical photography, 8k, photorealistic textures, soft editorial grade --ar 16:9 --v 6.0
 - Negative Prompt: hologram, sci-fi, futuristic, neon, glowing digital UI, hud, blueprints, user interface, text, words, letters, watermark, signature, nudity, explicit gore, open wound close-up, necrotic tissue, excessive blood, dark/carbon background.
+
+Estas son instrucciones, no hagas imágenes todavía.
 ```
 
 ---
