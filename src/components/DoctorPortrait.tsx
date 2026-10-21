@@ -45,16 +45,16 @@ export default function DoctorPortrait({
       
       {/* Badges sobre la fotografía oficial */}
       <div className="absolute top-4 left-4 z-10">
-        <span className="inline-flex items-center gap-1.5 bg-[var(--color-ink)]/90 backdrop-blur-md px-3.5 py-1.5 text-xs sm:text-sm font-medium tracking-wider text-[var(--color-gold)] border border-[var(--color-gold)]/40 shadow-sm">
-          <ShieldCheck className="w-4 h-4 text-[var(--color-gold)]" />
+        <span className="inline-flex items-center gap-1.5 bg-[var(--color-ink)]/90 backdrop-blur-md px-3.5 py-1.5 text-xs sm:text-sm font-medium tracking-wider text-[var(--color-gold-light)] border border-[var(--color-gold-light)]/40 shadow-sm">
+          <ShieldCheck className="w-4 h-4 text-[var(--color-gold-light)]" />
           CMCG C24000624
         </span>
       </div>
 
-      <div className="absolute bottom-4 left-4 right-4 z-10 p-4 bg-[var(--color-ink)]/90 backdrop-blur-md border border-[var(--color-gold)]/30 text-white shadow-lg">
+      <div className="absolute bottom-4 left-4 right-4 z-10 p-4 bg-[var(--color-ink)]/90 backdrop-blur-md border border-[var(--color-gold-light)]/30 text-white shadow-lg">
         <div className="flex items-center justify-between text-sm">
           <span className="font-heading text-base text-[var(--color-gold-light)]">{alt}</span>
-          <span className="text-xs uppercase tracking-widest text-[var(--color-gold)]">Tuxtla Gtz.</span>
+          <span className="text-xs uppercase tracking-widest text-[var(--color-gold-light)]">Tuxtla Gtz.</span>
         </div>
         <p className="text-xs text-white/80 mt-1">{subtitle}</p>
       </div>

@@ -16,7 +16,7 @@
 :root {
   --color-ink: #212224; /* negro oficial del logo — texto principal */
   --color-ink-soft: #4a4a4a;
-  --color-gold: #bca488; /* dorado/champán oficial del logo — único acento vivo */
+  --color-gold: #6b4914; /* dorado oscuro / bronce profundo de alto impacto y contraste */
   --color-gold-light: #e4d8c8;
   --color-gold-pale: #f4efe8;
   --color-cream: #faf8f5; /* fondo general, cálido, no blanco puro */
@@ -33,7 +33,11 @@
   --duration-luxe: 0.9s;
 
   --shadow-soft: 0 20px 45px -20px rgba(33, 34, 36, 0.12);
-  --shadow-gold: 0 16px 35px -14px rgba(188, 164, 136, 0.45);
+  --shadow-gold: 0 16px 35px -14px rgba(107, 73, 20, 0.4);
+}
+
+footer {
+  --color-gold: #d4ba88; /* dorado luminoso sobre fondo oscuro en el footer */
 }
 
 @theme inline {
@@ -97,7 +101,7 @@ h4,
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Franja de credenciales (StickyHeader) — mismo tratamiento tipográfico que
