@@ -39,7 +39,7 @@ export default function Header() {
 
         <Link href="/" className="md:justify-self-center py-1 flex items-center justify-center" aria-label={`${doctor.title} ${doctor.name}`}>
           <Image
-            src="/logo-black.png"
+            src="/logo-dorado.png"
             alt={`${doctor.title} ${doctor.name} — ${doctor.specialistTitle}`}
             width={320}
             height={155}
