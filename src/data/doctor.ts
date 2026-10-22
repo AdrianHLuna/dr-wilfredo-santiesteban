@@ -34,8 +34,8 @@ export const doctor: DoctorProfile = {
     "Lunes a viernes de 10:00 a 13:00, sábados de 11:00 a 17:00, domingos con previa disponibilidad. Todas las consultas se realizan mediante cita previa; existe la posibilidad de consultas fuera del horario habitual sujetas a disponibilidad, y las urgencias quirúrgicas se atienden mediante contacto telefónico previo y valoración.",
   openingHours: ["Mo-Fr 10:00-13:00", "Sa 11:00-17:00"],
   acceptingNewPatients: true,
-  // PENDIENTE: el doctor solicitó fotos reales, aún no entregadas.
-  photo: "/doctor-placeholder.jpg",
+  photo: "/doctor-hero.jpg",
+  aboutPhoto: "/doctor-about.jpg",
   bio: "El Dr. Wilfredo Marcial Santiesteban Herrera es cirujano general con formación en Cuba y certificación vigente por el Consejo Mexicano de Cirugía General. Con más de 4 años de experiencia, ha atendido a más de 3,500 pacientes y realizado más de 400 procedimientos quirúrgicos en su consultorio de Tuxtla Gutiérrez, Chiapas. Su práctica abarca desde la patología de vesícula biliar y pared abdominal hasta la cirugía de piel, tejidos blandos, región anorrectal y pie diabético.",
   philosophy:
     "Cada procedimiento quirúrgico debe explicarse con claridad antes de realizarse, para que el paciente entienda su diagnóstico, las opciones de tratamiento y lo que puede esperar de su recuperación.",

@@ -190,7 +190,7 @@ export default function HomePage() {
             <RevealOnScroll delay={100} className="w-full max-w-md">
               <div className="relative aspect-[3/4] w-full">
                 <DoctorPortrait
-                  src={doctor.photo}
+                  src={doctor.aboutPhoto ?? doctor.photo}
                   alt={`${doctor.title} ${doctor.name}`}
                   frame
                   subtitle="Especialidad en Cirugía General"
