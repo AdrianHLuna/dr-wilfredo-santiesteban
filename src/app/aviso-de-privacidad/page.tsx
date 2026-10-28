@@ -30,7 +30,8 @@ export default function AvisoDePrivacidadPage() {
           <h2 className="text-xl font-semibold text-foreground">Datos Personales Recabados</h2>
           <p className="mt-2 text-base leading-relaxed">
             Se recaban datos de identificación y contacto (nombre, teléfono, correo electrónico) cuando el
-            paciente los proporciona voluntariamente por WhatsApp, teléfono o formulario de contacto.
+            paciente los proporciona voluntariamente por WhatsApp o llamada telefónica. Este sitio no utiliza
+            formularios de ningún tipo para recabar datos de los visitantes.
           </p>
         </div>
 

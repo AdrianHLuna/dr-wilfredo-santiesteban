@@ -23,12 +23,12 @@ export default async function OpengraphImage(props: { params: Promise<{ slug: st
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "linear-gradient(135deg, #0f766e 0%, #134e4a 100%)",
-          color: "#ffffff",
+          background: "linear-gradient(135deg, #212224 0%, #3a2a14 100%)",
+          color: "#faf8f5",
         }}
       >
         <div style={{ fontSize: 58, fontWeight: 700, lineHeight: 1.1 }}>{service?.name}</div>
-        <div style={{ display: "flex", fontSize: 30, marginTop: 28, opacity: 0.92 }}>
+        <div style={{ display: "flex", fontSize: 30, marginTop: 28, color: "#d4ba88" }}>
           {`${doctor.title} ${doctor.name} · ${doctor.specialty} · ${doctor.city}`}
         </div>
       </div>

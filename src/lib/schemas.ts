@@ -30,11 +30,22 @@ const refSymptoms = (ids?: string[]) =>
 
 // ─── Grafo base: presente en TODAS las páginas ───────────────
 export function baseGraph() {
+  // Convención mexicana de nombre: dos apellidos al final ("Santiesteban
+  // Herrera"), el resto son nombres de pila ("Wilfredo Marcial") — dividir
+  // solo por la primera palabra asignaba "Marcial" al apellido por error.
+  const nameWords = doctor.name.trim().split(/\s+/);
+  const familyName = nameWords.slice(-2).join(" ");
+  const givenName = nameWords.slice(0, -2).join(" ") || nameWords[0];
+
   return [
     {
-      "@type": "Physician",
+      "@type": ["Person", "Physician"],
       "@id": IDS.physician,
       name: `${doctor.title} ${doctor.name}`,
+      givenName,
+      familyName,
+      honorificPrefix: doctor.title,
+      jobTitle: doctor.specialistTitle || doctor.specialty,
       description: doctor.bio,
       url: baseUrl,
       medicalSpecialty: doctor.specialty,
@@ -60,8 +71,8 @@ export function baseGraph() {
       ...(doctor.openingHours ? { openingHours: doctor.openingHours } : {}),
       hasMap: doctor.googleMapsUrl,
       image: doctor.photo,
-      priceRange: `$${doctor.consultationPrice} MXN`,
-      paymentAccepted: doctor.paymentMethods.join(", "),
+      ...(doctor.consultationPrice > 1 ? { priceRange: `$${doctor.consultationPrice} MXN` } : {}),
+      ...(doctor.paymentMethods.length > 0 ? { paymentAccepted: doctor.paymentMethods.join(", ") } : {}),
       isAcceptingNewPatients: doctor.acceptingNewPatients,
       hasCredential: doctor.education.map((e) => ({
         "@type": "EducationalOccupationalCredential",
@@ -69,14 +80,19 @@ export function baseGraph() {
         recognizedBy: { "@type": "CollegeOrUniversity", name: e.institution },
       })),
       sameAs: doctor.sameAs || [],
+      worksFor: { "@id": IDS.organization },
       parentOrganization: { "@id": IDS.organization },
     },
     {
-      "@type": "MedicalOrganization",
+      "@type": ["Organization", "MedicalOrganization", "LocalBusiness"],
       "@id": IDS.organization,
       name: `Consultorio ${doctor.title} ${doctor.name}`,
+      legalName: `Consultorio ${doctor.title} ${doctor.name}`,
+      description: doctor.bio,
       url: baseUrl,
       telephone: doctor.phone,
+      email: doctor.email,
+      image: doctor.photo,
       address: {
         "@type": "PostalAddress",
         streetAddress: doctor.address,
@@ -84,6 +100,20 @@ export function baseGraph() {
         addressRegion: doctor.state,
         addressCountry: doctor.country,
       },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          telephone: doctor.phone,
+          email: doctor.email,
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "reservations",
+          telephone: doctor.whatsapp,
+        },
+      ],
+      employee: { "@id": IDS.physician },
       subOrganization: { "@id": IDS.physician },
     },
     {

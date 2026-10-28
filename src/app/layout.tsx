@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     template: `%s | ${doctor.title} Wilfredo Santiesteban`,
   },
   description: `${doctor.title} ${doctor.name}, ${doctor.specialistTitle} en ${doctor.city}, ${doctor.state}. Cirugía de vesícula, hernias, piel y tejidos blandos, región anorrectal y pie diabético.`,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: `${doctor.title} ${doctor.name} — ${doctor.specialistTitle} en ${doctor.city}`,
+    description: doctor.bio,
+    locale: "es_MX",
+    type: "website",
+    images: [{ url: doctor.photo, width: 1024, height: 1280, alt: `${doctor.title} ${doctor.name}` }],
+  },
 };
 
 export const viewport: Viewport = {
