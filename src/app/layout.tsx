@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { doctor } from "@/data";
 import { cormorant, jost } from "@/lib/fonts";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import ConversionTracker from "@/components/ConversionTracker";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyBottomNav from "@/components/StickyBottomNav";
@@ -83,8 +84,46 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             `,
           }}
         />
+
+        {/* Google Ads Conversion Event Handlers */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion_llamadas(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined' && url) {
+                    window.location = url;
+                  }
+                };
+                if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                    'send_to': 'AW-18546857629/9-CzCLTEkK8dEJ2t6otF',
+                    'event_callback': callback
+                  });
+                }
+                return false;
+              }
+
+              function gtag_report_conversion_whatsapp(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined' && url) {
+                    window.location = url;
+                  }
+                };
+                if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                    'send_to': 'AW-18546857629/RTEdCLfEkK8dEJ2t6otF',
+                    'event_callback': callback
+                  });
+                }
+                return false;
+              }
+            `,
+          }}
+        />
       </head>
       <body className="pb-16 md:pb-0">
+        <ConversionTracker />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
