@@ -75,6 +75,11 @@ export default function HomePage() {
                   <span className="border border-[var(--color-line)] bg-white px-3.5 py-1.5 font-mono shadow-2xs">
                     Céd Esp: {doctor.cedulaEspecialidad} ({doctor.cedulaEspecialidadInstitucion})
                   </span>
+                  {doctor.cofepris && (
+                    <span className="border border-[var(--color-line)] bg-white px-3.5 py-1.5 font-mono shadow-2xs">
+                      COFEPRIS: {doctor.cofepris}
+                    </span>
+                  )}
                   <span className="border border-[var(--color-gold)]/60 bg-[var(--color-gold-pale)] px-3.5 py-1.5 font-medium text-[var(--color-ink)]">
                     Miembro AMCG
                   </span>
@@ -242,6 +247,20 @@ export default function HomePage() {
                     {doctor.cedulaInstitucion}
                   </span>
                 </div>
+
+                {doctor.cofepris && (
+                  <div className="border border-[var(--color-line)] bg-white p-4 sm:col-span-2">
+                    <span className="text-xs uppercase tracking-wider text-[var(--color-slate)] block">
+                      Aviso de Publicidad COFEPRIS
+                    </span>
+                    <span className="font-mono text-lg font-bold text-[var(--color-ink)] block mt-0.5">
+                      {doctor.cofepris}
+                    </span>
+                    <span className="text-sm text-[var(--color-slate)] mt-0.5 block">
+                      Comisión Federal para la Protección contra Riesgos Sanitarios
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Formación Universitaria */}

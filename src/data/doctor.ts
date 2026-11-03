@@ -1,7 +1,7 @@
 import type { DoctorProfile } from "@/types/schema";
 
-// Datos reales del intake del doctor (2026-10-09). Campos marcados PENDIENTE
-// no fueron confirmados — nunca se inventan (correo, folio COFEPRIS, ficha
+// Datos reales del intake del doctor. Campos marcados PENDIENTE
+// no fueron confirmados — nunca se inventan (correo, ficha
 // de Google Business Profile canónica, redes sociales: el doctor confirmó
 // explícitamente que no tiene).
 export const doctor: DoctorProfile = {
@@ -13,7 +13,7 @@ export const doctor: DoctorProfile = {
   cedulaInstitucion: "UCM Camagüey, Cuba",
   cedulaEspecialidad: "14317168",
   cedulaEspecialidadInstitucion: "UCM La Habana, Cuba",
-  // Sin folio COFEPRIS confirmado — PENDIENTE, no se fabrica.
+  cofepris: "2607012002A00667",
   phone: "+528186561102",
   whatsapp: "+528186561102",
   emergencyPhone: "+528186561102",

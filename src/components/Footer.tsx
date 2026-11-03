@@ -58,6 +58,11 @@ export default function Footer() {
           <p className="max-w-2xl leading-relaxed">
             La información de este sitio tiene fines educativos e informativos y no sustituye una consulta médica
             profesional. Ante cualquier urgencia, acude de inmediato a un servicio de urgencias.
+            {doctor.cofepris && (
+              <span className="block mt-1 text-white/50">
+                Aviso de Publicidad COFEPRIS: {doctor.cofepris}
+              </span>
+            )}
           </p>
           <Link href="/aviso-de-privacidad" className="shrink-0 text-sm text-white/70 hover:text-white transition-colors">
             Aviso de privacidad

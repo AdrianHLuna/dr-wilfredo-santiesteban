@@ -116,6 +116,11 @@ export default function DoctorPortrait({
           <span className="bg-white/80 border border-[var(--color-line)] px-2.5 py-1">
             Céd Esp: {doctor.cedulaEspecialidad} ({doctor.cedulaEspecialidadInstitucion})
           </span>
+          {doctor.cofepris && (
+            <span className="bg-white/80 border border-[var(--color-line)] px-2.5 py-1">
+              COFEPRIS: {doctor.cofepris}
+            </span>
+          )}
         </div>
       </div>
 
