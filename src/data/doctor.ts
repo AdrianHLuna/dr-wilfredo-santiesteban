@@ -63,4 +63,5 @@ export const doctor: DoctorProfile = {
   // PENDIENTE: el doctor confirmó que no tiene redes sociales ni ficha de
   // Google verificada todavía, así que sameAs queda vacío por ahora.
   sameAs: [],
+  ga4Id: "G-2M4NJESYKK",
 };
